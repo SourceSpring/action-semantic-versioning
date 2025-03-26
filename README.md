@@ -1,6 +1,6 @@
 # Version Updater Action
 
-![Version Updater](https://img.shields.io/github/actions/workflow/status/your-username/your-repo-name/main.yml?branch=main)
+![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
 
 ## 📦 Description
 
@@ -64,3 +64,4 @@ jobs:
           artifact_id: "action-semantic-versioning"
           increment: "patch"
 ```
+
