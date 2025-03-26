@@ -64,4 +64,3 @@ jobs:
           artifact_id: "action-semantic-versioning"
           increment: "patch"
 ```
-
