@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - "*"
-  pull_request:
-    branches:
-      - main
+#   pull_request:
+#     branches:
+#       - main
 
 jobs:
   pre-commit:
@@ -18,3 +18,4 @@ jobs:
         with:
           # Optional: Specify the pre-commit config file
           config_file: .pre-commit-config.yaml
+
