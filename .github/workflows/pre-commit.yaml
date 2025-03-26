@@ -1,21 +1,16 @@
 name: Pre-commit checks
 
 on:
+  pull_request:
   push:
-    branches:
-      - "*"
-#   pull_request:
-#     branches:
-#       - main
+    branches: [main]
 
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run pre-commit
-        uses: pre-commit/action@v3
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.1
         with:
-          # Optional: Specify the pre-commit config file
           config_file: .pre-commit-config.yaml
-
