@@ -3,10 +3,11 @@
 import argparse
 import sys
 import os
-from typing import Optional
-import xml.etree.ElementTree as ET
-import toml
 import logging
+import xml.etree.ElementTree as ET
+from typing import Optional
+import toml
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -87,7 +88,6 @@ def increment_version(version: str, part: str) -> str:
         return f"{major}.{minor + 1}.0"
     if part == 'patch':
         return f"{major}.{minor}.{patch + 1}"
-
     raise ValueError("Invalid part. Use 'major', 'minor', or 'patch'")
 
 def main():
@@ -137,9 +137,6 @@ def main():
 
     except (FileNotFoundError, ValueError) as e:
         logger.error("Error: %s", str(e))
-        sys.exit(1)
-    except Exception as e:
-        logger.error("Unexpected error: %s", str(e))
         sys.exit(1)
 
 if __name__ == "__main__":
