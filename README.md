@@ -1,1 +1,37 @@
-# action-semantic-versioning
+![Version Updater](https://img.shields.io/github/actions/workflow/status/your-username/your-repo-name/main.yml?branch=main)
+
+name: 'Version Updater Action'
+description: 'Find and update version in XML or TOML files and export values to GITHUB_ENV.'
+author: 'Your Name'
+inputs:
+file_path:
+description: 'Path to the XML or TOML file'
+required: true
+artifact_id:
+description: 'Artifact ID to find or update'
+required: true
+increment:
+description: "Which part of the version to increment: major, minor, or patch"
+required: false
+set_version:
+description: "Custom version to set instead of increment"
+required: false
+runs:
+using: 'composite'
+steps: - name: Setup Python
+uses: actions/setup-python@v4
+with:
+python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install -r ${{ github.action_path }}/requirements.txt
+
+    - name: Run version update script
+      run: |
+        python ${{ github.action_path }}/update_version.py \
+          ${{ inputs.file_path }} \
+          ${{ inputs.artifact_id }} \
+          ${{ inputs.increment && format('--increment {0}', inputs.increment) || '' }} \
+          ${{ inputs.set_version && format('--set-version {0}', inputs.set_version) || '' }}
+      shell: bash
+
