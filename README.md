@@ -1,37 +1,66 @@
+# Version Updater Action
+
 ![Version Updater](https://img.shields.io/github/actions/workflow/status/your-username/your-repo-name/main.yml?branch=main)
 
-name: 'Version Updater Action'
-description: 'Find and update version in XML or TOML files and export values to GITHUB_ENV.'
-author: 'Your Name'
-inputs:
-file_path:
-description: 'Path to the XML or TOML file'
-required: true
-artifact_id:
-description: 'Artifact ID to find or update'
-required: true
-increment:
-description: "Which part of the version to increment: major, minor, or patch"
-required: false
-set_version:
-description: "Custom version to set instead of increment"
-required: false
-runs:
-using: 'composite'
-steps: - name: Setup Python
-uses: actions/setup-python@v4
-with:
-python-version: '3.x'
+## 📦 Description
 
-    - name: Install dependencies
-      run: pip install -r ${{ github.action_path }}/requirements.txt
+A GitHub Action to find and update version numbers in `XML` or `TOML` files.
+And export useful version variables into the `GITHUB_ENV` environment.
 
-    - name: Run version update script
-      run: |
-        python ${{ github.action_path }}/update_version.py \
-          ${{ inputs.file_path }} \
-          ${{ inputs.artifact_id }} \
-          ${{ inputs.increment && format('--increment {0}', inputs.increment) || '' }} \
-          ${{ inputs.set_version && format('--set-version {0}', inputs.set_version) || '' }}
-      shell: bash
+---
 
+## ✅ Features
+
+- Reads and updates version in `pom.xml` or `pyproject.toml`
+- Supports version incrementing (`major`, `minor`, `patch`)
+- Allows setting a custom version
+- Automatically exports:
+  - `artifact-version-id`
+  - `artifact-name`
+  - `artifact-full-id`
+
+---
+
+## 📥 Inputs
+
+| Input         | Required | Description                                                        |
+| ------------- | -------- | ------------------------------------------------------------------ |
+| `file_path`   | ✅       | Path to the XML or TOML file (e.g., `pom.xml` or `pyproject.toml`) |
+| `artifact_id` | ✅       | The artifact name to search for in the file                        |
+| `increment`   | ❌       | Version part to increment: `major`, `minor`, or `patch`            |
+| `set_version` | ❌       | Custom version to set instead of incrementing                      |
+
+---
+
+## ✅ Outputs (via GITHUB_ENV)
+
+| Environment Variable  | Description                                |
+| --------------------- | ------------------------------------------ |
+| `artifact-version-id` | The updated version number                 |
+| `artifact-name`       | The artifact name                          |
+| `artifact-full-id`    | A combination of artifact name and version |
+
+---
+
+## 🚀 Usage Example
+
+```yaml
+name: Update Artifact Version
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  version-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run version updater
+        uses: your-username/your-repo-name@v1
+        with:
+          file_path: "./pyproject.toml"
+          artifact_id: "action-semantic-versioning"
+          increment: "patch"
+```

@@ -1,0 +1,31 @@
+[project]
+name = "action-semantic-versioning"
+version = "0.0.1"
+description = "A short description of your project."
+authors = [
+  { name = "epankur", email = "noreply@mail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["example", "pre-commit", "python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = [
+    "C0114",  # missing-module-docstring
+    "C0115",  # missing-class-docstring
+    "C0116",  # missing-function-docstring
+    "R0903",  # too-few-public-methods
+    "W0511",  # fixme
+]
+
+[tool.pylint.BASIC]
+max-line-length = 120
+
+[tool.pylint.FORMAT]
+indent-string = "    "
