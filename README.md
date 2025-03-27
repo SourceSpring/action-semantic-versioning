@@ -4,6 +4,8 @@
 
 ![Used By](https://img.shields.io/github/SourceSpring/action-semantic-versioning)
 
+![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
+
 ## 📦 Description
 
 A GitHub Action to find and update version numbers in `XML` or `TOML` files.
