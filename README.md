@@ -1,6 +1,6 @@
 # Version Updater Action
 
-![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
+![Version Updater](https://img.shields.io/github/SourceSpring/action-semantic-versioning/workflows/main.yml/badge.svg)
 
 ![Used By](https://img.shields.io/github/SourceSpring/action-semantic-versioning)
 
