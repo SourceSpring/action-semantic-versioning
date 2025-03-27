@@ -2,6 +2,8 @@
 
 ![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
 
+![Used By](https://img.shields.io/github/dependents-repo/YOUR_USERNAME/YOUR_REPOSITORY)
+
 ## 📦 Description
 
 A GitHub Action to find and update version numbers in `XML` or `TOML` files.
