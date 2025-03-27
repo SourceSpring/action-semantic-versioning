@@ -1,12 +1,22 @@
 # Version Updater Action
 
-![Version Updater](https://img.shields.io/github/SourceSpring/action-semantic-versioning/workflows/main.yml/badge.svg)
+![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
 
-![Used By](https://img.shields.io/github/SourceSpring/action-semantic-versioning)
+![GitHub last commit](https://img.shields.io/github/last-commit/SourceSpring/action-semantic-versioning)
 
-![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)
 
-![test] (https://github.com/SourceSpring/action-semantic-versioning/actions/workflows/main.yml/badge.svg)
+![GitHub issues](https://img.shields.io/github/issues/SourceSpring/action-semantic-versioning)
+
+![GitHub pull requests](https://img.shields.io/github/issues-pr/SourceSpring/action-semantic-versioning)
+
+![GitHub forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social)
+
+![GitHub stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social)
+
+![GitHub license](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning)
+
+![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning)
 
 ## 📦 Description
 
