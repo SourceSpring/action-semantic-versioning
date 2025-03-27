@@ -6,7 +6,7 @@
 
 ![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
 
-https://github.com/SourceSpring/action-semantic-versioning/actions/workflows/main.yml/badge.svg
+![test] (https://github.com/SourceSpring/action-semantic-versioning/actions/workflows/main.yml/badge.svg)
 
 ## 📦 Description
 
