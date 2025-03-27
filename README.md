@@ -1,90 +1,122 @@
-# Version Updater Action
+# SourceSpring Version Updater Action
 
-![SourceSpring](https://img.shields.io/badge/SourceSpring-%23232323?style=for-the-badge&logo=SourceSpring&logoColor=white)
-![Version](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning?style=flat-square)
-![Coverage](https://img.shields.io/badge/coverage-93%25-yellowgreen?style=flat-square)
-![Discussions](https://img.shields.io/badge/discussions-158%20total-blue?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main&label=Version%20Updater)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/SourceSpring/action-semantic-versioning)
-![GitHub Issues](https://img.shields.io/github/issues/SourceSpring/action-semantic-versioning)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SourceSpring/action-semantic-versioning)
-![GitHub License](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning)
-[![Used by](https://img.shields.io/badge/Used%20by-23.2k-blue)](https://github.com/SourceSpring/action-semantic-versioning/network/dependents)
-![GitHub Forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social)
-![GitHub Stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social)
+## Overview
 
----
+The Version Updater Action is a sophisticated GitHub Action designed to streamline version management across software projects. By supporting both XML and TOML configuration files, this action simplifies version tracking and enables automated version incrementation with minimal configuration.
 
-## 📦 Overview
+## 🌟 Key Features
 
-The **Version Updater Action** is a powerful GitHub Action designed to automate version management in `XML` (e.g., `pom.xml`) and `TOML` (e.g., `pyproject.toml`) files. It simplifies workflows by finding, updating, and exporting version-related variables into the `GITHUB_ENV` environment, making them readily available for downstream tasks.
+### Comprehensive Version Management
+- **Multi-Format Support**: Seamlessly handles version updates in Maven `pom.xml` and Python `pyproject.toml` files
+- **Flexible Version Incrementation**: 
+  - Increment major, minor, or patch versions automatically
+  - Manually set specific version numbers
+- **Environment Integration**: Automatically exports version-related variables for downstream workflows
 
----
+### Intelligent Version Tracking
+- Automatically extracts artifact names and version information
+- Provides consistent version management across different project types
+- Reduces manual intervention in version bumping processes
 
-## ✅ Key Features
+## 📦 Installation
 
-- **File Support**: Reads and updates versions in `pom.xml` (Maven) or `pyproject.toml` (Python).
-- **Version Incrementing**: Supports `major`, `minor`, and `patch` version increments.
-- **Custom Versioning**: Allows setting a specific version manually.
-- **Environment Exports**: Automatically sets the following variables in `GITHUB_ENV`:
-  - `artifact-version-id`: The updated version number.
-  - `artifact-name`: The artifact name.
-  - `artifact-full-id`: A combination of artifact name and version.
-
----
-
-## 📥 Inputs
-
-| Input         | Required | Description                                                        |
-|---------------|----------|--------------------------------------------------------------------|
-| `file_path`   | ✅       | Path to the XML or TOML file (e.g., `pom.xml` or `pyproject.toml`). |
-| `artifact_id` | ✅       | The artifact name to search for in the file.                       |
-| `increment`   | ❌       | Version part to increment: `major`, `minor`, or `patch`.           |
-| `set_version` | ❌       | Custom version to set instead of incrementing (e.g., `1.2.3`).     |
-
-> **Note**: Either `increment` or `set_version` can be used, but not both simultaneously.
-
----
-
-## ✅ Outputs
-
-The action exports the following variables to `GITHUB_ENV` for use in subsequent steps:
-
-| Environment Variable  | Description                                |
-|-----------------------|--------------------------------------------|
-| `artifact-version-id` | The updated version number (e.g., `1.0.1`).|
-| `artifact-name`       | The artifact name (e.g., `my-project`).    |
-| `artifact-full-id`    | Combined artifact name and version (e.g., `my-project-1.0.1`). |
-
----
-
-## 🚀 Usage Example
-
-Below is an example GitHub workflow that uses the Version Updater Action to increment the `patch` version in a `pyproject.toml` file.
+To integrate the Version Updater Action into your GitHub workflow, add the following configuration to your workflow file:
 
 ```yaml
-name: Update Artifact Version
+- name: Update Project Version
+  uses: SourceSpring/action-semantic-versioning@v1
+  with:
+    file_path: "./path/to/configuration/file"
+    artifact_id: "your-project-name"
+    increment: "patch"  # Or "minor", "major"
+```
+
+## 🔧 Configuration Options
+
+### Required Inputs
+
+| Parameter      | Type   | Required | Description                                           |
+|---------------|--------|----------|-------------------------------------------------------|
+| `file_path`   | String | ✅       | Path to version configuration file (pom.xml/pyproject.toml) |
+| `artifact_id` | String | ✅       | Unique identifier for your project or artifact        |
+
+### Optional Inputs
+
+| Parameter      | Type   | Description                                           |
+|---------------|--------|-------------------------------------------------------|
+| `increment`   | String | Version segment to increment: `major`, `minor`, `patch` |
+| `set_version` | String | Manually specify an exact version number               |
+
+> **Important**: You must use either `increment` or `set_version`, but not both simultaneously.
+
+## 📤 Exported Environment Variables
+
+The action automatically populates the following environment variables:
+
+| Variable            | Description                                     | Example             |
+|--------------------|-------------------------------------------------|---------------------|
+| `artifact-version-id` | Updated version number                          | `1.2.3`             |
+| `artifact-name`    | Project or artifact name                        | `my-awesome-project`|
+| `artifact-full-id` | Combined artifact name and version               | `my-awesome-project-1.2.3` |
+
+## 🚀 Workflow Examples
+
+### Automated Patch Version Update
+```yaml
+name: Automatically Update Version
 
 on:
   push:
     branches: [main]
 
 jobs:
-  version-update:
+  version-bump:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Update Version
+      - uses: actions/checkout@v3
+      
+      - name: Increment Patch Version
         uses: SourceSpring/action-semantic-versioning@v1
         with:
           file_path: "./pyproject.toml"
-          artifact_id: "action-semantic-versioning"
+          artifact_id: "my-project"
           increment: "patch"
+```
 
-      - name: Display Updated Version
-        run: |
-          echo "Updated Version: $artifact-version-id"
-          echo "Artifact Name: $artifact-name"
-          echo "Full ID: $artifact-full-id"
+### Manual Version Setting
+```yaml
+name: Manual Version Update
+
+jobs:
+  version-set:
+    steps:
+      - name: Set Specific Version
+        uses: SourceSpring/action-semantic-versioning@v1
+        with:
+          file_path: "./pom.xml"
+          artifact_id: "enterprise-app"
+          set_version: "2.1.0"
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please check our GitHub repository for guidelines on:
+- Reporting issues
+- Suggesting features
+- Submitting pull requests
+
+## 📄 License
+
+This project is licensed under the terms specified in the GitHub repository.
+
+## 🔗 Project Status
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml)](https://github.com/SourceSpring/action-semantic-versioning)
+[![Version](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)](https://github.com/SourceSpring/action-semantic-versioning/releases)
+[![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/SourceSpring/action-semantic-versioning)
+
+## 📊 Community & Adoption
+
+- **Total Dependents**: 23.2k repositories
+- **Open Discussions**: 158
+- **GitHub Stars**: Growing community support
