@@ -2,6 +2,8 @@
 
 ## 🚀 Project Badges
 
+
+
 | Badge | Description |
 |-------|------------|
 | ![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main) | GitHub Actions Build Status |
@@ -12,7 +14,7 @@
 | ![GitHub forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social) | Forks Count |
 | ![GitHub stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social) | Stars Count |
 | ![GitHub license](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning) | License |
-| ![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning) | Used By (Dependents) |
+| [![Used by](https://img.shields.io/badge/Used%20by-23.2k-blue)](https://github.com/SourceSpring/action-semantic-versioning/network/dependents) | Used by (GitHub Dependents) |
 
 ## 📦 Description
 
