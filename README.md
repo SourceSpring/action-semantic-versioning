@@ -2,7 +2,7 @@
 
 ![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
 
-![Used By](https://img.shields.io/github/dependents-repo/YOUR_USERNAME/YOUR_REPOSITORY)
+![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning)
 
 ## 📦 Description
 
