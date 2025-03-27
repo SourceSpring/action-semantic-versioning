@@ -1,22 +1,18 @@
 # Version Updater Action
 
-![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
+## 🚀 Project Badges
 
-![GitHub last commit](https://img.shields.io/github/last-commit/SourceSpring/action-semantic-versioning)
-
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)
-
-![GitHub issues](https://img.shields.io/github/issues/SourceSpring/action-semantic-versioning)
-
-![GitHub pull requests](https://img.shields.io/github/issues-pr/SourceSpring/action-semantic-versioning)
-
-![GitHub forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social)
-
-![GitHub stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social)
-
-![GitHub license](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning)
-
-![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning)
+| Badge | Description |
+|-------|------------|
+| ![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main) | GitHub Actions Build Status |
+| ![GitHub last commit](https://img.shields.io/github/last-commit/SourceSpring/action-semantic-versioning) | Last Commit |
+| ![GitHub release (latest by date)](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning) | Latest Release |
+| ![GitHub issues](https://img.shields.io/github/issues/SourceSpring/action-semantic-versioning) | Open Issues |
+| ![GitHub pull requests](https://img.shields.io/github/issues-pr/SourceSpring/action-semantic-versioning) | Open Pull Requests |
+| ![GitHub forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social) | Forks Count |
+| ![GitHub stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social) | Stars Count |
+| ![GitHub license](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning) | License |
+| ![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning) | Used By (Dependents) |
 
 ## 📦 Description
 
