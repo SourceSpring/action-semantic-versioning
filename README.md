@@ -4,6 +4,18 @@
 
 The Version Updater Action is a sophisticated GitHub Action designed to streamline version management across software projects. By supporting both XML and TOML configuration files, this action simplifies version tracking and enables automated version incrementation with minimal configuration.
 
+## 🔗 Project Status
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml)](https://github.com/SourceSpring/action-semantic-versioning)
+[![Version](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)](https://github.com/SourceSpring/action-semantic-versioning/releases)
+[![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/SourceSpring/action-semantic-versioning)
+
+## 📊 Community & Adoption
+
+- **Total Dependents**: 23.2k repositories
+- **Open Discussions**: 158
+- **GitHub Stars**: Growing community support
+
 ## 🌟 Key Features
 
 ### Comprehensive Version Management
@@ -109,14 +121,3 @@ We welcome contributions! Please check our GitHub repository for guidelines on:
 
 This project is licensed under the terms specified in the GitHub repository.
 
-## 🔗 Project Status
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml)](https://github.com/SourceSpring/action-semantic-versioning)
-[![Version](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)](https://github.com/SourceSpring/action-semantic-versioning/releases)
-[![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/SourceSpring/action-semantic-versioning)
-
-## 📊 Community & Adoption
-
-- **Total Dependents**: 23.2k repositories
-- **Open Discussions**: 158
-- **GitHub Stars**: Growing community support
