@@ -9,12 +9,15 @@ The Version Updater Action is a sophisticated GitHub Action designed to streamli
 [![Build Status](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml)](https://github.com/SourceSpring/action-semantic-versioning)
 [![Version](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)](https://github.com/SourceSpring/action-semantic-versioning/releases)
 [![Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen)](https://github.com/SourceSpring/action-semantic-versioning)
-
-## 📊 Community & Adoption
-
-- **Total Dependents**: 23.2k repositories
-- **Open Discussions**: 158
-- **GitHub Stars**: Growing community support
+![Version Updater](https://img.shields.io/github/actions/workflow/status/SourceSpring/action-semantic-versioning/main.yml?branch=main)
+![GitHub last commit](https://img.shields.io/github/last-commit/SourceSpring/action-semantic-versioning)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/SourceSpring/action-semantic-versioning)
+![GitHub issues](https://img.shields.io/github/issues/SourceSpring/action-semantic-versioning)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/SourceSpring/action-semantic-versioning)
+![GitHub forks](https://img.shields.io/github/forks/SourceSpring/action-semantic-versioning?style=social)
+![GitHub stars](https://img.shields.io/github/stars/SourceSpring/action-semantic-versioning?style=social)
+![GitHub license](https://img.shields.io/github/license/SourceSpring/action-semantic-versioning)
+![Used By](https://img.shields.io/github/dependents-repo/SourceSpring/action-semantic-versioning)
 
 ## 🌟 Key Features
 
